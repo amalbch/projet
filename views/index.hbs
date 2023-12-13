@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+</head>
+<body>
+    {{#each actualites}}
+    <div style="border: 1px solid black;margin-bottom:10px;padding:5px">
+        <h1>{{titre}}</h1>
+        <p>{{description}}</p>
+        <h4>{{formatDate date}}</h4>
+    </div>
+    {{/each}}
+
+    <a href="/add">Ajouter une actualité</a>
+
+    <!-- Script Handlebars pour formater la date -->
+    <script>
+        Handlebars.registerHelper('formatDate', function (date) {
+            // Ajoutez ici votre logique pour formater la date comme vous le souhaitez
+            return date;
+        });
+    </script>
+</body>
+</html>
