@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 4000;
 const path = require('path');
 const mysql = require('mysql');
 const hbs = require('express-hbs');
@@ -40,7 +40,7 @@ app.get("/add", (req, res) => {
 app.get("/addnews", (req, res) => {
   const untitre = req.query.letitre;
   const unedesc = req.query.ladescription;
-  const sql = "INSERT INTO actualite (titre, description,date) VALUES (?, ?)";
+  const sql = "INSERT INTO actualite (titre, description) VALUES (?, ?)";
   
   connection.query(sql, [untitre, unedesc], (error, results, fields) => {
     if (error) throw error;
