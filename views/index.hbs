@@ -3,6 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        div {
+            background-color: white;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
     <title>Page d'accueil</title>
 </head>
 <body>
@@ -15,13 +42,5 @@
     {{/each}}
 
     <a href="/add">Ajouter une actualité</a>
-
-    <!-- Script Handlebars pour formater la date -->
-    <script>
-        Handlebars.registerHelper('formatDate', function (date) {
-            // Ajoutez ici votre logique pour formater la date comme vous le souhaitez
-            return date;
-        });
-    </script>
 </body>
 </html>

@@ -18,7 +18,6 @@ app.engine('hbs', hbs.express4({
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
-// Définir le helper formatDate
 hbs.registerHelper('formatDate', function (date) {
   // Ajoutez ici votre logique pour formater la date comme vous le souhaitez
   return date;
@@ -27,7 +26,7 @@ hbs.registerHelper('formatDate', function (date) {
 connection.connect();
 
 app.get("/", (req, res) => {
-  connection.query('SELECT * FROM actualite', (error, results, fields) => {
+  connection.query('SELECT * FROM actualite ORDER BY date DESC', (error, results, fields) => {
     if (error) throw error;
     res.render('index', { actualites: results });
   });
@@ -44,7 +43,7 @@ app.get("/addnews", (req, res) => {
   
   connection.query(sql, [untitre, unedesc], (error, results, fields) => {
     if (error) throw error;
-    res.send(results);
+    res.redirect('/');
   });
 });
 
